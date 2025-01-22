@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:14
+    container_name: swift_postgres
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: myuser
+      POSTGRES_DB: swiftdb
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    container_name: swift_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: myuser
+      DB_PASSWORD: mysecretpassword
+      DB_NAME: swiftdb
+      DB_PORT: 5432
+    command: ["./main"]
