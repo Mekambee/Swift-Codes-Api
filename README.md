@@ -39,6 +39,7 @@
     at the localhost:8080 address. The instruction below will guide you through the API endpoints and 
     you will find the guidelines on how to pass the data to the API.
 
+#### ⚠️ "For the application to function properly, ensure that your port :5432 is not occupied, as this is the default port on which the PostgreSQL database listens."
 
 ---
 
