@@ -39,7 +39,7 @@
     at the localhost:8080 address. The instruction below will guide you through the API endpoints and 
     you will find the guidelines on how to pass the data to the API.
 
-#### ⚠️ "For the application to function properly, ensure that your port :5432 is not occupied, as this is the default port on which the PostgreSQL database listens."
+#### ⚠️ "For the application to function properly, ensure that your port :5432 is not occupied, as this is the default port on which the PostgreSQL database listens. (And ofcourse port :8080, where the application is running)"
 
 ---
 
@@ -250,6 +250,8 @@ Below is a summary of all test categories in this project, along with their purp
 ```bash
 go test ./... -v
 ```
+
+⚠️ Warning: Running tests locally via `go test ./... -v` requires Go to be installed on your machine.
 
 ## 6.1) Parser Unit Tests 
 ### (`internal/services/parser_test.go`)
