@@ -251,7 +251,31 @@ Below is a summary of all test categories in this project, along with their purp
 go test ./... -v
 ```
 
+Passing the `-v` flag will show verbose output, including the names of each test as they run.
+19 tests should be run and passed while executing the command above. 
+
 ⚠️ Warning: Running tests locally via `go test ./... -v` requires Go to be installed on your machine.
+
+⚠️ Important Testing Information
+
+During the testing of final version of this project on other computer with Windows system, some issues were observed when running all tests using the go test ./... command:
+
+Behavior on Windows:
+
+Running go test ./... caused 2 tests to fail:
+TestSwiftService_Basic
+TestIntegration_GetCountry
+To resolve this, it was necessary to navigate to the specific directory containing the tests and execute go test directly within that directory. When running tests this way, all tests passed successfully.
+
+On macOS (Where the project was developed), running go test ./... executed all tests successfully without any failures.
+
+Recommendation:
+If you encounter issues with failing tests on a Windows (or possibly other operating
+system), try the following steps:
+
+Navigate to the directory containing the specific tests, and then run `go test -v` directly in that directory.
+
+This difference in behavior may be related to system-specific configurations or dependencies.
 
 ## 6.1) Parser Unit Tests 
 ### (`internal/services/parser_test.go`)
